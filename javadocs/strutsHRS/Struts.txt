@@ -1,0 +1,58 @@
+
+God:
+https://www.slideshare.net/rguptamtech/struts2-16525202 dwld #########
+https://www.slideshare.net/rajeevuppala/html-xml-and-java-script Dwld
+
+Struts:
+https://www.codejava.net/frameworks/struts/introduction-to-struts-2-framework bvn
+https://www.java4s.com/struts-tutorials/struts-1-x-vs-struts-2-x-main-differences/
+https://www.websparrow.org/struts/difference-between-struts-2-3-x-and-2-5-x
+crud:
+https://www.websparrow.org/struts/struts2-create-read-update-and-delete-crud-example-using-jdbc bvn  all good examples
+https://www.websparrow.org/struts/struts2-login-example-using-mysql-database-stored-procedure
+https://www.concretepage.com/struts-2/struts-2-validation-annotation-example
+
+--
+https://howtodoinjava.com/struts2/spring-4-struts-2-hibernate-integration-tutorial/
+https://www.codejava.net/frameworks/struts/struts-2-spring-4-hibernate-4-integration-tutorial-part-1-xml-configuration
+https://www.websparrow.org/struts/struts-2-and-hibernate-integration-example-xml-based
+https://www.websparrow.org/struts/struts2-crud-example-using-jquery-json-and-jdbc
+https://www.concretepage.com/spring-4/spring-4-struts-2-hibernate-4-annotation-integration-example-using-javaconfig
+--
+AJax:
+https://struts.apache.org/core-developers/ajax.html
+
+--
+good videos:
+https://www.youtube.com/watch?v=qlksgJICLCc
+
+--
+Tutorials:
+https://www.dineshonjava.com/struts-2-baby-step-to-learn/
+https://mkyong.com/tutorials/struts-2-tutorials/
+https://www.edureka.co/blog/struts-2-tutorial/
+https://www.roseindia.net/struts/Struts-1-Tutorial.shtml
+
+--
+for prep tut:
+https://www.java4s.com/struts-tutorials/struts-execution-flow-diagram-how-struts-works/ BVN
+https://www.programcreek.com/2011/08/struts-2-tutorials-mvc-design-pattern/
+https://www.programcreek.com/2010/05/the-best-free-struts-2-tutorial/
+https://www.programcreek.com/2011/09/illustration-for-struts-2-interceptors/
+http://tutorials4u.net/struts2-tutorial/struts2_hello_world_example.html    bvn
+http://javawebtutor.com/articles/struts/mvc_overview.php
+https://www.viralpatel.net/introduction-to-struts-2-framework/ BVn
+https://www.viralpatel.net/struts2-interceptors-tutorial-with-example/ bvn
+
+for prep tut:
+Coding best sites
+https://www.codejava.net/frameworks/struts/struts-2-spring-4-hibernate-4-integration-tutorial-part-1-xml-configuration
+https://howtodoinjava.com/struts2/spring-4-struts-2-hibernate-integration-tutorial/
+http://java.candidjava.com/tutorial/Struts-2-Multi-action-tutorial.htm  bbvb
+https://mkyong.com/struts2/struts-2-spring-hibernate-integration-example/
+
+
+
+---
+Github:
+https://github.com/nitinsurana/Struts2-Examples

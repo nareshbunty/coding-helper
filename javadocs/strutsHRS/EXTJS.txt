@@ -1,0 +1,37 @@
+ ExtJs
+ 
+ http://www.mapfish.org/doc/tutorials/extjs.html
+ 
+ https://www.sencha.com/blog/ext-js-from-scratch-part-1/ 
+ 
+ https://riptutorial.com/extjs
+https://www.sencha.com/products/extjs/
+https://hackernoon.com/the-rise-and-fall-of-ext-js-c9d727131991
+https://www.extjs-tutorial.com/
+http://senchatutorials.in/
+
+Githubs:
+https://github.com/mgusmano/ExtJSFromScratch
+
+
+---
+Crud:
+https://www.mindstick.com/articles/12244/crud-operation-in-extjs god#####
+https://anwarkharrat.wordpress.com/2014/01/22/rest-services-crud-application-using-extjs-4-and-spring-mvc-3/ ##
+https://www.extjs-tutorial.com/extjs/crud-in-extjs-grid ##
+https://dzone.com/articles/ext-js-4-crud-example
+
+https://avaldes.com/spring-mvc-restful-web-service-example-with-spring-data-for-mongodb-and-extjs-gui/
+--
+https://dzone.com/articles/ext-js-4-spring-mvc-crud
+--
+https://www.manning.com/books/sencha-touch-in-action
+https://www.manning.com/books/ext-js-in-action-second-edition
+http://extjs-sencha.blogspot.com/2012/10/extjs-cheat-sheet-basic.html
+
+616755396
+CPrjruAm474
+
+ppt: to snap shots
+https://www.powershow.com/view/4d788d-N2U2O/Getting_Started_With_Ext_Js_powerpoint_ppt_presentation
+https://www.slideshare.net/sergiuboboc/ext-js-presentation-13663874
