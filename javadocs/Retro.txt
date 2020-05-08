@@ -1,0 +1,90 @@
+Gouri:
+
+What Went Well:
+Every thing Related to Project.
+
+What Did Not Went Well And Needs to be improve:
+
+Nothing.
+
+Madhu:
+1. What went well this month ?
+
+Team co-ordination is very good and  Naresh explained lot of things in project. I have successfully  completed one user story and raised PR.
+
+2. What didn’t well ?
+
+HRS project setup is a lengthy process facing lot of issues while setup and working with new IDE RAD(Rational Application Development).
+ 
+3.   What needs to be improved and how ?
+
+a.       I need to improve domain, technical, functional and user stories analysis skills.
+b.      I need to concentrate on UI ( ExtJs, JS ).
+c.       And also concentrate on Database (My sql, sql queries and stored Procedures ).
+
+PhalGuni:
+1.What went well?
+
+(i) Attended different sessions on functional and Technical overview of HRS project.
+
+(ii)Attended training sessions on Ext.js and Technical architecture of HRS.
+
+(iii)With the complete guidance of team able to complete the set up of HRS project.
+
+(iv)I have been assigned the POC along with  Ganesh , Madhu and Shyam and under your guidance got to know the complete process starting from the analysis of user story ,understanding the different use cases for the stories,how to maintain the coding standards and how to handle the various exceptions.
+
+2.What didn't go well?
+
+As of now everything is going good.
+
+
+3.What needs to be improved and how?
+
+(i)The process of redeploying and rebuilding the application after making a small change in the application takes little bit more time.
+
+(ii)Sometimes the RAD does not respond properly and at the same time the DaaS also becomes very slow.
+
+(iii)I am looking into the technologies used in the project and trying to understand the usage in the project.
+
+Ganesh:
+
+1) What went well this month?
+I attended session,Domain, functional overview and got one User Story as POC to work done well with the support, guidance of Naresh
+2) What didn't went well?
+My side Debugging, understanding technical functional overview and there is gap in between team.
+3) what needs to be improved and how?
+My side I'm focusing on improve my lack area and Team need to communicate each other , share knowledge among themselves.
+
+Naresh:
+
+1.what went well?
+-1. Team coordination for learning,project setup through calls and videos
+ 2. Passion to learn (ganesh,madhu,phalguni,shyam,me ) attended to all training /sessions without fail
+ 3. Patience of team for setup build,practice,learning new things
+ 4. onboarding process, applying problem solving solutions by me and teams cooperation to it.
+ 5. Luckily we got 1 simple user story to do POC
+ 6. Basic EXJTS Training , KickStart , Funtional sessions parallely project setup,time to code review before working on user story 
+
+whant not went well?
+1. lockdown (team cannot assist each other on live,difficult through webEX)
+2. no practicals KT's or KT sessions (Reasons 1. no intrest (stallions) 2. fear and lack of confidence(Hijackers))
+3. fear or lack of questioning skills of team.(thinking and Questioing skills need to improve)
+4. team not concentrated on practicals of EXTJS
+5. no documents,no proper strategy and  planning of EXTJS Training by venkat , still people are in confuse and not confident on EXTJS even few team mates attended sessions twice(seniors not attended to this session(other then first day) as they feel this not helpful for them)- (need proper strategy and  planing of  any Trainings). 
+  Reasons for failure:
+  1.no documents,no proper strategy and  planning ,video sessions due to lockdown,practicals missed.
+  2.fear or lack of questioning skills of team.
+  3. no videos shared yet
+6.Raman is trying to build communication between new Joined, first impresion is best impression please dont fear to speak he is very cool/good person use the opputunity , imrove your thinking /questining skills and feel free to share or discuss with him on an thing.
+
+what need to be improve and how?
+1. self concentration on improving coding skills(coding techniques/approches), technologies, communications,using all development tools by setting goals and deadlines.
+2. for a developer main job is to deliver code ,if a developer gets time for practicals /improving Development skills is boon for him/her, in current generation without spending time on Development skills, no developer can gain progress on carrier
+3. team got good enough to time code review and guidance but not used it fully (please be wise set goals and strategies if required ask if guidance or tricks to reach the goal).
+4. go for all innovative ideas to speed up your work where ever possible ,if require ask other team mates.
+5. share your observation  on code reviews or technology and with senior or other mates ,for both suggestions and confirmation of concept you learned.
+6. loose fear to share KT, sharing and learing between teammates is just like group study in colleges.
+7. Try to improve peer reviews of code of all teammates(onshore/ofshore)
+8. try to learn all basic configurations first in all technologies to understand projects.
+9. improve commnucations/coordinating/approaching other teammates of offshore and on shore
+10.  offshore standups are not only for status of your work u can share/ask any query or blocker, if not meeting and have blocker if need help of naga quickly approach him in watsapp also
