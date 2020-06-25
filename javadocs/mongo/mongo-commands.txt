@@ -1,0 +1,497 @@
+list of commands
+
+1. Download mongo for your env
+https://www.mongodb.com/download-center/community
+
+2. Install follow the instructions based on the environment
+3. go to mongo db installation folder:
+		cd mongodb-xxx 
+4. create data folder 
+	UNIX: mkdir data
+	WINDOWS: use UI
+
+5. start mongodb
+	UNIX:	   sudo bin/mongodb --dbpath=/data
+	WINDOWS:   bin/mongodb --dbpath=data
+
+6. access mongo client:
+	UNIX:	   sudo ./mongo
+	WINDOWS:   mongo	
+7. view list of databases:
+		show dbs;
+
+8. Create/ change database:
+		use my-sample-db;
+
+9. Create collection:
+		db.createColection("sample");
+		
+10. View list of collections:
+		show collections;
+
+11. Delete a collection:
+		db.sample.drop();
+
+12. Delete a database:
+		db.dropDatabase(); // this command will work, when the user is inside the database
+
+13. Add a document to collection:
+		db.sample.insert({name:"Mohsin",email:"mohs@gmail.com"});
+14. Adding Bulk documents:
+		db.sample.insert([{name:"John",email:"joh@gmail.com"},{name:"Roger",email:"rog@gmail.com"},{name:"Tim",email:"tim@gmail.com"}]); 
+
+15. Fetch documents:
+		db.sample.find();
+
+16. Fetch documents / cleaner:
+		db.sample.find().pretty();
+
+17. Fetch by Name:
+		db.sample.find({name:"Tim"}).pretty();
+
+18. Update a document:
+		db.sample.update({name:"Mohsin"},{$set:{email:"mk@yahoo.com"}});
+19. Update document with new field:
+		db.sample.update({name:"Mohsin"},{$set:{phone:123456789}});
+20. Remove a document:
+		db.sample.remove({name:"Roger"});
+
+21. Remove multiple documents meeting the criteria:
+		db.sample.remove({name:"Tim",1});
+
+22. Add bulk users:
+		
+db.users.insert([{fname:"John",lname:"Stevens",email:"john@gmail.com",salary:100000},{fname:"Bob",lname:"Johnson",email:"bob@gmail.com",salary:125000},{fname:"Raghu",lname:"Raj",email:"raghu@gmail.com",salary:50000},{fname:"Adam",lname:"Sandler",email:"adam@gmail.com",salary:24000}]);
+
+23. Update an existing value:
+		db.users.update({fname:"Adam"},{$inc:{salary:10000}}); //This shall increment the existing salary
+
+24. Fetch all users with salary greater than 50k:
+		db.users.find({salary:{$gt:50000}}).pretty();
+
+25. Fetch all users with salary greater than 50k or equal to:
+		db.users.find({salary:{$gte:50000}}).pretty();
+
+26. Fetch all users with salary lesser than 50k:
+		db.users.find({salary:{$lt:50000}}).pretty();
+
+27. Fetch all users with salary lesser than 50k or equal to:
+		db.users.find({salary:{$lte:50000}}).pretty();
+
+28. Fetch all users with salary not equal to 50k:
+		db.users.find({salary:{$ne:50000}}).pretty();
+
+29. Fetch only the users with salary field:
+		db.users.find({salary:{$exists:true}});;
+
+30. Fetch users that have salary field and in range of 100k-150k:
+		db.users.find({salary:{$exists:true,$in:[100000,1500000]}});
+
+31. Rename the email field to address:
+		db.users.updateMany({},{$rename:{"email":"eaddress"}}); 
+
+32. Upsert a new User:
+		db.users.update({fname:"Moh"},{$set:{active:false}},{upsert:true}); //shall create the doc,if none match,else will modify the existing one
+
+33. Find and modify the user:
+		db.users.findAndModify({ query:{fname:"Mohsin"},update:{$set:{eaddress:"mk@aol.com"}});
+
+34. Find users with multiple conditions-AND:
+		db.users.find({$and:[{active:true},{salary:{$gt:50000}}]});
+
+35. Find users with multiple conditions-OR:
+		db.users.find({$or:[{active:true},{salary:{$gt:50000}}]});
+
+36. Fetch only first 2 documents:
+		db.users.find({}).limit(2).pretty();
+
+37. Skip first document:
+		db.users.find({}).limit(2).skip(1).pretty();
+
+38. Skip specific fields:
+		db.users.find({},{salary:0,_id:0}).pretty();
+
+39. Fetch sorted documents:
+		db.users.find({},{fname:1,lname:1,_id:0}).sort({fname:1}).pretty(); //ascending order: 1, desc : -1
+
+40. Get the total salary of all the users:
+		db.users.aggregate([{$match:{} },{$group:{_id:0,totalSalary:{$sum:"$salary"}}}]);
+
+41. Get the maximum salary amongst all the users:
+		db.users.aggregate([{$match:{} },{$group:{_id:0,highestSalary:{$max:"$salary"}}}]);
+
+42. Get the lowest salary amongst the users:
+		db.users.aggregate([{$match:{} },{$group:{_id:0,lowestSalary:{$min:"$salary"}}}]);
+
+43. Get the average salary amongst the users:
+		db.users.aggregate([{$match:{} },{$group:{_id:0,averageSalary:{$avg:"$salary"}}}]);
+
+44. Get count of documents with aggregate function:
+		db.users.aggregate([{$group:{_id:0,total:{$sum:1}}}]);
+45. Create Index:
+		db.createIndex({name:-1}); // asc: 1 , desc:-1
+
+46. Create Compound Index;
+		db.users.createIndex({name:-1,email:1});
+
+47. Fetch All Indexes:
+		db.users.getIndexes();
+
+48. Delete an Index:
+		db.users.dropIndex({name: -1});
+
+49. Delete all Indexes:
+		db.users.dropIndexes();
+
+50. Enable Authentication:
+		use admin;
+		db.createUser(
+ 			 {
+			    user: "admin",
+			    pwd: "123",
+			    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
+			  }
+			);
+
+			//restart mongod
+			mongod --auth --dbpath=data/
+
+			// access mongo client
+			// linux
+			mongo -u "admin" -p "123" --authenticationDatabase "admin"
+			// windows
+			mongo -u "admin" -p "123" --authenticationDatabase="admin"
+			
+    Create Custom Role:
+    		db.createRole({
+		     role: "allowReadAccess",
+		     privileges: [
+		       { resource: { db: "admin", collection: "countries" }, actions: [ "find" ] }
+		     ],
+		     roles: []
+		   }
+		);
+
+51. Enable database user:
+		db.createUser({
+    		user:"dbUser",
+    		pwd:"pass@123",
+    		roles:[
+        		{role: "readWrite",db:"my-db"}
+        	]});
+
+		db.createUser({
+		    user : "readUser",
+		    pwd : "123",
+		    roles : [
+			{
+			    role : "allowReadAccess", db : "admin"
+			}
+		    ]
+		});
+        	// this use has limited access & cannot operate beyond that
+
+52. Manage relationships via:
+		Embedded References:
+		db.productCategories.insertMany([
+    {
+        _id:001,
+        name: "Electronics"
+    },
+    {
+        _id:002,
+        name: "Computers"
+    },
+    {
+        _id:003,
+        name: "Phones"
+    },
+    {
+        _id:004,
+        name: "BatteryDriven"
+    }
+]);
+
+// Create PRODUCTS NOW
+	db.products.insertMany([
+    {
+        _id: 1,
+        name:"Macbook Air",
+        make:"Apple",
+        price: 60000,
+        category: [001,002,004]
+    },
+    {
+        _id: 2,
+        name:"Macbook Pro",
+        make:"Apple",
+        price: 100000,
+        category: [001,002,004]
+    },
+    {
+        _id: 3,
+        name:"Thinkpad",
+        make:"Lenovo",
+        price: 40000,
+        category: [001,002,004]
+    },
+    {
+        _id: 4,
+        name:"Nexus",
+        make:"Google",
+        price: 90000,
+        category: [001,003,004]
+    }
+]);
+
+53. Manage relationships via:
+		Embedded Documents:
+		db.ecommerce.insertMany([
+    {
+        _id:1,
+        name: "Flipkart",
+        website: "flipkart.com",
+        turnover: 3000000000,
+        currency: "INR",
+        employees:[
+            {
+                id: 1,
+                name: "John",
+                email: "john@flipkart.com",
+                salary: 1000000
+            },
+            {
+                id: 2,
+                name: "Bob",
+                email: "Bob@flipkart.com",
+                salary: 900000
+            },
+            {
+                id: 3,
+                name: "Roger",
+                email: "roger@flipkart.com",
+                salary: 550000
+            }
+        ]
+    },
+    {
+        _id:2,
+        name: "Amazon",
+        website: "amazon.com",
+        turnover: 10000000000,
+        currency: "$",
+        employees:[
+            {
+                id: 1,
+                name: "Michael",
+                email: "michael@amazon.com",
+                salary: 1000000
+            },
+            {
+                id: 2,
+                name: "Tim",
+                email: "Tim@amazon.com",
+                salary: 910200
+            },
+            {
+                id: 3,
+                name: "Adams",
+                email: "adams@amazon.com",
+                salary: 750000
+            }
+        ]
+    }
+]);
+
+db.ecommerce.update({_id:2},
+    {
+        $set:{
+            region:{
+                zone: "India",
+                locations: 700
+            }
+        }
+    }
+);
+
+54. Fetch All EMployees with Salary on or above 750000 Embedded Documents:
+
+	db.ecommerce.find({"employees.salary":750000}).pretty();
+
+55. Fetch Data from parent & child:
+	db.products.aggregate([
+    {
+        $lookup:{
+            from: "productCategories",
+            localField: "category",
+            foreignField: "_id",
+            as : "categories"
+        }
+    }
+]);
+
+56. Unwind the employees & filter by Salary
+db.ecommerce.aggregate([{
+        $unwind: "$employees" 
+        },
+        {
+            $match:{
+                "employees.salary":{ $lt:760000 }
+            }
+        },
+        {
+            $project:
+            {
+                "name":1,
+                "employees.name":1,
+                "employees.salary":1
+            }
+        }
+]).pretty()
+
+57. Unwind the Referenced Documents
+	db.products.aggregate([
+    {
+        $lookup:{
+            from: "productCategories",
+            localField: "category",
+            foreignField: "_id",
+            as : "categories"
+        }
+    },
+    {
+        $unwind: "$categories"
+    },
+    {
+        $group: {
+            _id:0,
+            "Total Cost": {$sum : "$price"}
+        }
+    }
+]);
+
+58. Get all Employees with salary less than the max salary
+db.ecommerce.aggregate([{
+        $unwind: "$employees" 
+        },
+        {
+            $group: {
+                _id: "$_id",
+                emps: { $push : "$$ROOT" }
+            }
+        },
+        {
+            $unwind: "$emps"
+        },
+        {
+            $project:{
+                salary : "$emps.employees.salary",
+                name: "$emps.employees.name"
+            }
+        },
+        {
+            $sort:{ salary: -1 }
+        },
+        {
+            $skip: 2
+        }
+]).pretty()
+
+59. Get all PRODUCTS with Price when price is greater than 50000
+	db.products.aggregate([
+    {
+        $lookup:{
+            from: "productCategories",
+            localField: "category",
+            foreignField: "_id",
+            as : "categories"
+        }
+    },
+    {
+        $unwind: "$categories"
+    },{
+        $project:{
+            name : 1,
+            price: {
+                $cond: {
+                    if: {
+                        $gte: ["$price",50000]
+                    },
+                    then: "$price",
+                    else : 0
+                }
+            }
+        }
+    }
+]);
+
+60. Get all PRODUCTS categories in ascending order
+	db.products.aggregate([
+    {
+        $lookup:{
+            from: "productCategories",
+            localField: "category",
+            foreignField: "_id",
+            as : "categories"
+        }
+    },
+    {
+        $unwind: "$categories"
+    },
+    {
+        $replaceRoot :{ newRoot : "$categories"} 
+    },
+    {
+        $group:{
+            _id: "$name"
+        }
+    },
+    {
+        $sort: {
+            _id : 1
+        }
+    }
+]);
+
+61. Get Custom Product Details
+	db.products.aggregate([
+    {
+        $lookup:{
+            from: "productCategories",
+            localField: "category",
+            foreignField: "_id",
+            as : "categories"
+        }
+    },
+    {
+        $unwind: "$categories"
+    },
+    {
+        $replaceRoot :{ newRoot :  {
+            ProductName : "$name",
+            Price: "$price",
+            category: "$categories.name",
+            catId: "$categories._id"
+        }
+        } 
+    }
+])
+
+62. Hide the child attributes for an Embedded Document
+db.ecommerce.aggregate([
+    {
+        $match :{}
+    },
+    {
+        $redact: {
+            {
+                $cond: {
+                    if: {
+                        $gte: ["$salary",750000] },
+                    then: "$$PRUNE",
+                    else : "$$DESCEND"
+                }
+            }
+        }
+    }
+])
